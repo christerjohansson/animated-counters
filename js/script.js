@@ -4,10 +4,16 @@ const speed = 200;
 counters.forEach(counter => {
     const updateCount = () => {
         const target = +counter.getAttribute('data-target');
-        const counst = +counter.innerText;
-
+        const count = +counter.innerText;
         const inc = target / speed;
 
+        /*Run loop and stop before hitting target*/
+        if (count < target) {
+            counter.innerText = Math.ceil(count + inc);
+            setTimeout(updateCount, 1);
+        } else {
+            count.innerText = target;
+        }
 
     }
 
