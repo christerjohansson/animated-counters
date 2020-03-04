@@ -3,9 +3,12 @@ const speed = 200;
 
 counters.forEach(counter => {
     const updateCount = () => {
-        const target = counter.getAttribute('data-target');
+        const target = +counter.getAttribute('data-target');
+        const counst = +counter.innerText;
 
-        console.log(target);
+        const inc = target / speed;
+
+
     }
 
 
